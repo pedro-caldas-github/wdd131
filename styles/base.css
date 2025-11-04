@@ -1,0 +1,180 @@
+/* Definição de Cores */
+:root {
+    --blue-dark: #172a5a; 
+    --blue-medium: #2b74b8; 
+    --gray-bg: #f0f0f0; 
+    --white: #fff;
+    --text-dark: #333;
+    --accent-color: #92b005; 
+}
+
+/* 1. Estilos Gerais e Corpo */
+body {
+    font-family: Arial, sans-serif; 
+    background-color: var(--gray-bg);
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.5;
+}
+
+body > span { display: none; }
+
+/* 2. Cabeçalho e Navegação */
+header {
+    background-color: var(--blue-dark);
+    color: var(--white);
+    padding-top: 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+header h1 .highlight {
+    color: white;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px 0;
+    background-color: var(--text-dark); 
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+/* ============================================== */
+/* 3. GRID PRINCIPAL (LAYOUT DE DUAS COLUNAS) */
+/* ============================================== */
+.content-grid {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    
+    /* Aplica o Grid para as colunas Main e Aside */
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 para a caixa esquerda, 1/3 para a direita */
+    gap: 20px;
+}
+
+/* 4. Estilo Comum das Caixas e Cabeçalho */
+.about-box, .resources-box {
+    background-color: var(--white);
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0; 
+}
+
+.box-header {
+    background-color: var(--blue-medium);
+    color: var(--white);
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0; 
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------- */
+/* 5. CAIXA 'ABOUT ME' (USO DE FLEXBOX INTERNO) */
+/* ----------------------------------------------- */
+.about-box > div {
+    padding: 20px;
+    /* Usa Flexbox para organizar o parágrafo inicial e a imagem de perfil */
+    display: flex;
+    flex-direction: column; /* Organiza os blocos internos em coluna */
+    gap: 20px;
+}
+
+/* Bloco de Texto e Imagem */
+.about-profile-content {
+    display: flex;
+    align-items: flex-start; /* Alinha itens ao topo */
+    gap: 15px;
+}
+
+.about-profile-content p {
+    flex: 1; /* Permite que o parágrafo ocupe o espaço restante */
+    margin: 0;
+}
+
+.about-box img {
+    /* Define o tamanho fixo da imagem de perfil */
+    width: 150px;
+    height: auto;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+    border: 1px solid #ccc; /* Adiciona uma borda fina na imagem, se desejar */
+}
+
+/* Sub-seção de Localização (Recife/Madagascar) */
+.location-info {
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid #eee; 
+    margin-top: 15px;
+}
+
+.location-info h3 {
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Bloco da Bandeira/Brasão e Texto Descritivo */
+.location-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.location-details img {
+    /* Define o tamanho fixo da imagem */
+    width: 100px;
+    height: auto;
+    flex-shrink: 0; 
+    margin: 0;
+}
+
+.location-details p {
+    margin: 0;
+}
+
+
+/* 6. Estilo da Caixa "Resources" (Coluna 2) */
+.resources-box > div {
+    padding: 20px;
+}
+
+.resources-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.resources-box a {
+    color: var(--blue-medium);
+    text-decoration: none;
+}
+
+/* 7. Rodapé */
+footer {
+    background-color: var(--blue-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
