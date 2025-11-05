@@ -5,17 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>WDD 131 – Dynamic Web Fundamentals – José Pedro Caldas da Silva</title>
-    <meta name="description" content="This is a presentation page for Pedro Caldas!">
+    <meta name="description" content="This is a presentation page for Pedro Caldas for the wdd131 class!">
     <meta name="author" content="Pedro Caldas">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="styles/base.css"> 
-    <script src="scripts\getdates.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
     <span>WDD 131 – Dynamic Web Fundamentals – José Pedro Caldas da Silva</span>
     
     <header>
-        <h1>WDD 131: Dynamic Web Fundamentals - <span class="highlight">José Pedro Caldas da Silva</span></h1> 
+         <h1>
+            <span id="course-title">WDD 131: Dynamic Web Fundamentals</span> - José Pedro Caldas da Silva
+        </h1> 
         <nav>
             <a href="https://www.linkedin.com/in/jose-pedro-caldas-da-silva/?locale=en_US">LinkedIn</a>
             <a href="https://byupw.instructure.com/">Canvas</a>
@@ -27,48 +32,50 @@
     <div class="content-grid"> 
 
         <main class="about-box">
-            <h2 class="box-header">About Me</h2>
-
-            <div> 
-                
-                <div class="about-profile-content"> 
-                    <p>Hello! My name is Pedro Caldas and I am from Recife, Brazil. I enjoy watching movies and going out for walks.
-                        I am 29 years old, graduated at economy some years ago and started pathway on february, ive been learnig a
-                        lot and Im very excited to get my certificates!!
-                    </p>
-                    <img src="images/profile.jpg" alt="Hello, my name is Pedro Caldas">
-                </div>
-                
-                <div class="location-info"> 
-                    <h3>Recife, Pernambuco</h3>
-                    
-                    <div class="location-details">
-                        <img src="images/flag-rec.jpeg" alt="Recife's flag">
-                        <p> Recife, the "Venice of Brazil," is a vibrant coastal city renowned for its many rivers and bridges. Its
-                            historic center, Recife Antigo, showcases beautiful colonial architecture and is a hub for culture and
-                            art.
-                            The city also boasts stunning beaches like Boa Viagem and a lively Carnival celebration featuring unique
-                            local music.
+            <section class="card about-box">
+                <h2 class="box-header">About Me</h2>
+                <div> 
+                    <div class="about-profile-content"> 
+                        <p>Hello! My name is Pedro Caldas and I am from Recife, Brazil. I enjoy watching movies and going out for walks.
+                            I am 29 years old, graduated at economy some years ago and started pathway on february, ive been learnig a
+                            lot and Im very excited to get my certificates!!
                         </p>
+                        <img src="images/profile.jpg" alt="Hello, my name is Pedro Caldas">
+                    </div>
+                    
+                    <div class="location-info"> 
+                        <h3>Recife, Pernambuco</h3>
+                        
+                        <div class="location-details">
+                            <img src="images/flag-rec.jpeg" alt="Recife's flag">
+                            <p> Recife, the "Venice of Brazil," is a vibrant coastal city renowned for its many rivers and bridges. Its
+                                historic center, Recife Antigo, showcases beautiful colonial architecture and is a hub for culture and
+                                art.
+                                The city also boasts stunning beaches like Boa Viagem and a lively Carnival celebration featuring unique
+                                local music.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <section class="resources-box">
+                <h2 class="box-header">Web Dev Resources</h2>
+                
+                <div>
+                    <ul>
+                        <li><a href="#">Dev.to Community</a></li>
+                        <li><a href="#">Smashing Magazine</a></li>
+                        <li><a href="#">CSS Tricks</a></li>
+                        <li><a href="#">W3 Schools</a></li>
+                        <li><a href="#">Udemy</a></li>
+                        <li><a href="#">Image Placeholder</a></li>
+                    </ul>
+                </div>
+            </section>
+
         </main>
 
-        <aside class="resources-box">
-            <h2 class="box-header">Web Dev Resources</h2>
-            
-            <div>
-                <ul>
-                    <li><a href="#">Dev.to Community</a></li>
-                    <li><a href="#">Smashing Magazine</a></li>
-                    <li><a href="#">CSS Tricks</a></li>
-                    <li><a href="#">W3 Schools</a></li>
-                    <li><a href="#">Udemy</a></li>
-                    <li><a href="#">Image Placeholder</a></li>
-                </ul>
-            </div>
-        </aside>
+
 
     </div>
     
