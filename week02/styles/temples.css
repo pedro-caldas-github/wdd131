@@ -1,46 +1,187 @@
-/* mobile first */
+/*
+====================================
+MOBILE FIRST (Regras Padrão)
+====================================
+*/
+
+/* --- Geral --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* --- Header e Navegação --- */
 header {
     display: flex;
-    /* Alinha os itens (button e nav) no centro horizontal */
-    justify-content: center;
-    /* Centraliza os itens verticalmente (opcional, mas recomendado para cabeçalhos) */
     align-items: center;
-    /* Define a largura total, se necessário */
     width: 100%;
     margin: 0;
 }
 
+nav {
+    background-color: gray;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* Para posicionar o H2 e o botão hamburger em lados opostos */
+    justify-content: space-between; 
+    position: relative; /* Necessário para posicionamento absoluto do .navigation */
+}
+
+h2 {
+    color: white;
+    font-size: x-large;
+    text-align: left;
+    padding: 10px 15px; 
+    margin: 0;
+    /* Ajuste de ordem para ficar à esquerda, caso o botão venha primeiro no HTML */
+    order: 1; 
+}
+
+/* Botão Hamburger: Visível no mobile e posicionado à direita */
+#menu {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    background: none;
+    border: none;
+    color: white; 
+    cursor: pointer;
+    order: 2; /* Posiciona o botão à direita do H2 */
+    z-index: 100; /* Garante que fique acima de tudo */
+}
+
+/* Lista de Navegação: Escondida por padrão no mobile */
 .navigation {
-    /* Remove a formatação padrão da lista */
+    display: none; /* ESCONDIDO por padrão no mobile */
+    flex-direction: column; 
     list-style: none;
     padding: 0;
     margin: 0;
-
-    /* Torna a lista horizontal */
-    display: flex;
-
-    /* Centraliza os itens <li> horizontalmente dentro da <ul> */
-    justify-content: center;
-    background-color: gray; 
+    background-color: gray;
+    width: 100%;
+    
+    /* Posicionamento abaixo do nav principal quando aparecer */
+    position: absolute;
+    top: 100%; /* Posiciona o menu logo abaixo da barra do nav */
+    left: 0;
+    z-index: 99;
 }
 
-/* Opcional: Estilização dos itens e links */
+/* Classe que será alternada pelo JavaScript para MOSTRAR o menu */
+.open {
+    display: flex;
+}
+
 .navigation li a {
-    /* Garante que o link ocupe todo o <li> e permita padding */
     display: block;
-    /* Adicione espaçamento para afastar os links */
     padding: 10px 15px;
     text-decoration: none;
     color: white;
-    margin: 0;
+    background-color: gray;
+    transition: background-color 0.3s;
 }
 
+.navigation li a:hover {
+    background-color: darkgray;
+    color: #eee;
+}
 
-/* larger screen */
-@media (min-width: 37.5em){
+.navigation li a.active {
+    background-color: darkgray;
+}
 
-    main{
-        background-color: white;
+/* --- Main Content e Grid (Mobile: 1 Coluna) --- */
+main {
+    max-width: 90%; 
+    margin: 0 auto; 
+    padding: 20px 0;
+    background-color: white;
+}
+
+.temple-images {
+    display: grid;
+    /* CORREÇÃO: 1 COLUNA para mobile-first */
+    grid-template-columns: 1fr; 
+    gap: 10px;
+    padding: 10px;
+}
+
+figure {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+figcaption {
+    text-align: center;
+    padding: 5px 0;
+    font-size: 0.8em; 
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    background-color: gray;
+    color: white;
+    font-size: large; 
+    padding: 15px 0;
+}
+
+/*
+====================================
+LARGE SCREEN (Regras para Desktop)
+====================================
+*/
+
+/* min-width: 37.5em equivale a 600px */
+@media (min-width: 37.5em) {
+    
+    /* --- Navegação: Layout Horizontal e sem Hamburger --- */
+    
+    /* Esconde o botão hamburger no desktop */
+    #menu {
+        display: none;
+    }
+    
+    .navigation {
+        /* Garante que o menu esteja VISÍVEL no desktop */
+        display: flex !important; /* Usa !important para garantir que sobrescreva o JS/Mobile */
+        flex-direction: row; /* Volta para horizontal */
+        position: static; /* Volta para o fluxo normal do nav */
+        width: auto; /* Ocupa apenas o espaço do conteúdo */
+    }
+    
+    /* --- Main: Ajustes para Desktop --- */
+    main {
+        max-width: 800px;
+        margin: 0 auto;
     }
 
+    /* --- Grid: 3 Colunas --- */
+    .temple-images {
+        /* Sobrescreve o mobile: 3 COLUNAS para desktop */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px; 
+    }
+    
+    /* --- Footer: Ajuste de Fonte --- */
+    footer {
+        font-size: x-large;
+    }
 }
