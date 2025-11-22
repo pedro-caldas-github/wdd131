@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recife - Brazilian Venice</title>
+    <link rel="stylesheet" href="styles/stiles.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>RECIFE</h1>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <picture>
+                <source media="(max-width: 800px)" srcset="images/recife-hero-small.jpg">
+                <source media="(min-width: 601px)" srcset="images/recife-hero-large.jpg">
+                <img src="images/recife-hero-large.jpg" alt="Recife Landscape - Bridges and rivers">
+            </picture>
+        </section>
+        
+        <section class="data">
+            <h2>Data</h2>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="label">Area:</span>
+                    <span class="value">218 km²</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Population:</span>
+                    <span class="value">1.653 million</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">State:</span>
+                    <span class="value">Pernambuco</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Region:</span>
+                    <span class="value">Northeast</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Foundation:</span>
+                    <span class="value">March 12, 1537</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Climate:</span>
+                    <span class="value">Tropical</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Time Zone:</span>
+                    <span class="value">UTC-3</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Area Code:</span>
+                    <span class="value">81</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Demonym:</span>
+                    <span class="value">Recifense</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">Altitude:</span>
+                    <span class="value">4 meters</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">GDP:</span>
+                    <span class="value">R$ 58.4 billion</span>
+                </div>
+                <div class="data-item">
+                    <span class="label">HDI:</span>
+                    <span class="value">0.772</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="weather">
+            <h2>Weather</h2>
+            <div class="weather-info">
+                <div class="weather-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 16C3.23858 16 1 13.7614 1 11C1 8.23858 3.23858 6 6 6C6.03315 6 6.06622 6.00033 6.09922 6.00098C7.0094 4.21966 8.86227 3 11 3C13.5196 3 15.6429 4.72577 16.2563 7.00462C16.5656 7.00156 16.8756 7 17.186 7C19.862 7 22 9.138 22 11.814C22 14.49 19.862 16.628 17.186 16.628C16.4927 16.628 15.821 16.522 15.186 16.322" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M9.5 16L15.5 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12.5 19L12.5 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="weather-details">
+                    <div class="weather-item">
+                        <span class="label">Temperature: </span>
+                        <span class="value">28 °C</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Conditions: </span>
+                        <span class="value">Partly Cloudy</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Wind: </span>
+                        <span class="value">15 km/h</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Humidity: </span>
+                        <span class="value">78%</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Feels Like: </span>
+                        <span class="value" id="windchill">30 °C</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="currentYear"></span> 💡 José Pedro Caldas da Silva 💡 RECIFE</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

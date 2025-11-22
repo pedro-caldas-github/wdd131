@@ -1,0 +1,387 @@
+/* CSS Variables - Define cores e valores reutilizáveis */
+:root {
+    --primary-color: #3235fc;    /* Vermelho da bandeira de Madagascar */
+    --secondary-color: #f8e805;  /* Verde da bandeira de Madagascar */
+    --accent-color: #ffffff;     /* Branco da bandeira */
+    --text-color: #333333;       /* Cor do texto principal */
+    --background-color: #f5f5f5; /* Cor de fundo geral */
+    --card-background: #ffffff;  /* Cor de fundo dos cards */
+    --border-radius: 8px;        /* Arredondamento de bordas */
+    --spacing-sm: 0.5rem;        /* Espaçamento pequeno */
+    --spacing-md: 1rem;          /* Espaçamento médio */
+    --spacing-lg: 2rem;          /* Espaçamento grande */
+    --font-family: 'Arial', sans-serif; /* Fonte principal */
+}
+
+/* Reset básico - Remove margens e paddings padrão dos navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border no cálculo de width/height */
+}
+
+/* Estilos gerais do body */
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;               /* Altura da linha para melhor legibilidade */
+    min-height: 100vh;              /* Mínimo 100% da altura da viewport */
+    display: flex;                   /* Ativa Flexbox */
+    flex-direction: column;         /* Organiza filhos em coluna (header, main, footer) */
+}
+
+/* HEADER - Cabeçalho fixo no topo */
+header {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    text-align: center;
+    padding: var(--spacing-lg);
+    position: relative;  /* Permite usar z-index */
+    z-index: 10;         /* Garante que fique acima de tudo */
+}
+
+/* Título principal */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Subtítulos (Data, Weather) */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    color: black;
+}
+
+/* MAIN - Área principal do conteúdo */
+main {
+    flex: 1;                        /* Ocupa todo espaço disponível entre header e footer */
+    position: relative;              /* Contexto de posicionamento para filhos absolutos */
+    width: 100%;
+}
+
+/* HERO SECTION - Imagem de fundo */
+.hero {
+    position: absolute;  /* Posiciona absolutamente em relação ao main */
+    top: 0;              /* Cola no topo */
+    left: 0;             /* Cola na esquerda */
+    width: 100%;         /* Largura total */
+    height: 100%;        /* Altura total */
+    z-index: 1;          /* Fica atrás do content-overlay */
+}
+
+/* Imagem do hero - comportamento responsivo */
+.hero img {
+    width: 100%;         /* Largura total do container */
+    height: 100%;        /* Altura total do container */
+    object-fit: cover;   /* Preenche o espaço mantendo proporção (corta se necessário) */
+    display: block;      /* Remove espaço abaixo da imagem */
+}
+
+/* CONTENT OVERLAY - Container para as sections sobrepostas */
+.content-overlay {
+    position: relative;   /* Cria contexto de posicionamento */
+    z-index: 3;          /* Fica acima da imagem do hero */
+    width: 100%;         /* Largura total */
+    height: 100vh;       /* Altura total da viewport */
+    pointer-events: none; /* Permite clicar através do container */
+}
+
+/* DATA SECTION - Card no canto superior direito */
+.data {
+    background-color: var(--card-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+    width: auto;         /* Largura automática conforme conteúdo */
+    max-width: 500px;    /* Largura máxima aumentada */
+    position: absolute;   /* Posiciona absolutamente em relação ao content-overlay */
+    top: var(--spacing-lg);    /* Distância do topo */
+    left: var(--spacing-lg);  /* Distância da direita */
+    pointer-events: auto; /* Permite interação (cliques, hover) */
+    z-index: 4;          /* Fica acima do content-overlay */
+}
+
+/* Grid para organizar os itens de data - 2 colunas */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 1rem;           /* Espaço maior entre os itens */
+}
+
+/* Itens individuais de data */
+.data-item {
+    display: flex;
+    flex-direction: column; /* Organiza label e valor em coluna */
+    padding: 0.75rem 0;    /* Espaçamento vertical aumentado */
+    border-bottom: 1px solid #eee; /* Linha divisória sutil */
+    min-height: 3rem;      /* Altura mínima para consistência */
+}
+
+/* Labels em negrito e coloridos */
+.label {
+    font-weight: bold;
+    color: var(--primary-color); /* Cor vermelha para destaque */
+    margin-bottom: 0.25rem;     /* Espaço entre label e valor */
+    font-size: 0.9rem;          /* Tamanho um pouco menor */
+}
+
+/* Valores - garante que não quebrem linha */
+.value {
+    white-space: nowrap;   /* Impede quebra de linha */
+    font-size: 1rem;       /* Tamanho normal */
+    color: var(--text-color);
+}
+
+/* WEATHER SECTION - Card no canto inferior esquerdo */
+.weather {
+    background-color: var(--card-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: auto;          /* Largura automática conforme conteúdo */
+    max-width: 350px;     /* Largura máxima */
+    position: absolute;    /* Posiciona absolutamente em relação ao content-overlay */
+    bottom: var(--spacing-lg); /* Distância do fundo */
+    right: var(--spacing-lg);   /* Distância da esquerda */
+    pointer-events: auto;  /* Permite interação */
+    z-index: 4;           /* Fica acima do content-overlay */
+}
+
+/* Container para informações do clima */
+.weather-info {
+    display: flex;
+    flex-direction: column; /* Organiza em coluna */
+    gap: 1rem;             /* Espaço maior entre elementos */
+}
+
+/* Itens individuais do clima */
+.weather-item {
+    display: flex;
+    flex-direction: column; /* Organiza label e valor em coluna */
+    padding: 0.75rem 0;    /* Espaçamento vertical aumentado */
+    border-bottom: 1px solid #eee; /* Linha divisória sutil */
+    min-height: 2.5rem;    /* Altura mínima para consistência */
+}
+
+/* FOOTER - Rodapé fixo */
+footer {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    text-align: center;
+    padding: var(--spacing-md);
+    position: relative;
+    z-index: 10; /* Garante que fique acima de tudo */
+}
+
+/* RESPONSIVE DESIGN - Adaptações para telas menores */
+
+@media (max-width: 768px) {
+    /* Mobile: sections ocupam 90% e centralizam */
+    .data, .weather {
+        max-width: 90%;
+        margin: var(--spacing-md) auto; /* Centraliza */
+        position: relative; /* Muda para fluxo normal */
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+    }
+    
+    .data {
+        margin-top: var(--spacing-lg);
+    }
+    
+    .weather {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    /* Mobile: grid com uma coluna */
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Mobile: ajusta altura mínima */
+    .data-item, .weather-item {
+        min-height: auto;
+        padding: 1rem 0; /* Mais espaço no mobile */
+    }
+    
+    /* Mobile: fontes menores */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* RESPONSIVE DESIGN - Adaptações para telas maiores */
+
+@media (min-width: 1024px) {
+    /* Desktop: mantém 2 colunas para data */
+    .data-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem; /* Espaço ainda maior no desktop */
+    }
+    
+    /* Desktop: aumenta ainda mais o espaçamento */
+    .data-item, .weather-item {
+        padding: 1rem 0;
+        min-height: 3.5rem;
+    }
+}
+
+/* MOBILE VIEW - Telas menores que 768px */
+@media (max-width: 768px) {
+    /* Ajustes gerais para mobile */
+    body {
+        padding: 0;
+    }
+    
+    main {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Header mobile */
+    header {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0;
+    }
+    
+    /* Hero section mobile - imagem pequena no topo */
+    .hero {
+        position: relative;
+        width: 100%;
+        height: auto;
+        order: 1;
+    }
+    
+    .hero img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 0;
+    }
+    
+    /* Data section mobile - abaixo da imagem */
+    .data {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        order: 2;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 2px solid var(--primary-color);
+    }
+    
+    .data h2 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .data-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .data-item {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        min-height: auto;
+    }
+    
+    /* Weather section mobile - abaixo dos dados */
+    .weather {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        order: 3;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .weather h2 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .weather-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .weather-item {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        min-height: auto;
+    }
+    
+    .weather-icon {
+        display: none; /* Esconde o ícone no mobile para economizar espaço */
+    }
+    
+    /* Ajustes de fonte para mobile */
+    .label {
+        font-size: 0.9rem;
+    }
+    
+    .value {
+        font-size: 0.9rem;
+        white-space: normal; /* Permite quebra de linha no mobile */
+    }
+    
+    /* Footer mobile */
+    footer {
+        padding: 1rem;
+        order: 4;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Ajustes específicos para telas muito pequenas (menos de 480px) */
+@media (max-width: 480px) {
+    .hero img {
+        height: 150px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .data h2,
+    .weather h2 {
+        font-size: 1.3rem;
+    }
+    
+    .data-item,
+    .weather-item {
+        padding: 0.4rem 0;
+    }
+}
