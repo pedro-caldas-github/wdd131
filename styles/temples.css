@@ -1,0 +1,188 @@
+/*
+====================================
+MOBILE FIRST (Default Rules)
+====================================
+*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* --- Header and Navigation --- */
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+nav {
+    background-color: gray;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* Positions H2 and hamburger button on opposite sides */
+    justify-content: space-between; 
+    /* Required for absolute positioning of the .navigation dropdown */
+    position: relative; 
+}
+
+h2 {
+    color: white;
+    font-size: x-large;
+    text-align: left;
+    padding: 10px 15px; 
+    margin: 0;
+    /* Sets H2 to the left side */
+    order: 1; 
+}
+
+/* Hamburger Button: Visible on mobile, positioned on the right */
+#menu {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    background: none;
+    border: none;
+    color: white; 
+    cursor: pointer;
+    /* Sets button to the right side */
+    order: 2; 
+    z-index: 100;
+}
+
+/* Navigation List: Hidden by default on mobile */
+.navigation {
+    display: none; /* HIDES the menu initially (mobile only) */
+    flex-direction: column; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: gray;
+    width: 100%;
+    
+    /* Absolute positioning below the main nav bar */
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    z-index: 99;
+}
+
+/* Class toggled by JavaScript to SHOW the menu */
+.open {
+    display: flex;
+}
+
+.navigation li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+    transition: background-color 0.3s;
+}
+
+.navigation li a:hover {
+    background-color: darkgray;
+    color: #eee;
+}
+
+.navigation li a.active {
+    background-color: darkgray;
+}
+
+/* --- Main Content and Grid (Mobile: 1 Column) --- */
+main {
+    max-width: 90%; 
+    margin: 0 auto; 
+    padding: 20px 0;
+    background-color: white;
+}
+
+.temple-images {
+    display: grid;
+    /* Grid Layout: 1 COLUMN for mobile-first */
+    grid-template-columns: 1fr; 
+    gap: 10px;
+    padding: 10px;
+}
+
+figure {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+figcaption {
+    text-align: center;
+    padding: 5px 0;
+    font-size: 0.8em; 
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    background-color: gray;
+    color: white;
+    font-size: large; 
+    padding: 15px 0;
+}
+
+/*
+====================================
+LARGE SCREEN (Desktop Rules)
+====================================
+*/
+
+/* min-width: 37.5em equals 600px */
+@media (min-width: 37.5em) {
+    
+    /* --- Navigation: Horizontal Layout and no Hamburger --- */
+    
+    /* Hides the hamburger button on desktop */
+    #menu {
+        display: none;
+    }
+    
+    .navigation {
+        /* Ensures menu is VISIBLE on desktop */
+        display: flex !important; 
+        flex-direction: row; /* Horizontal layout */
+        position: static; /* Removes absolute positioning */
+        width: auto; 
+    }
+    
+    /* --- Main: Desktop Adjustments --- */
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* --- Grid: 3 Columns --- */
+    .temple-images {
+        /* Overrides mobile: 3 COLUMNS for desktop */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px; 
+    }
+    
+    /* --- Footer: Font Adjustment --- */
+    footer {
+        font-size: x-large;
+    }
+}
