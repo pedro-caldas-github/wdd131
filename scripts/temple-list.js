@@ -95,17 +95,17 @@ function createTempleCards(filteredTemples = temples) {
     });
 }
 
-// Função para atualizar link ativo
+// Func to update active link
 function setActiveLink(activeLink) {
     document.querySelectorAll('.navigation a').forEach(link => link.classList.remove('active'));
     activeLink.classList.add('active');
 }
 
-// Quando o DOM carregar
+// Load DOM
 document.addEventListener('DOMContentLoaded', function() {
-    createTempleCards(); // Mostra todos os templos inicialmente
+    createTempleCards(); // Displays all cards
     
-    // Configura todos os event listeners de uma vez
+    // Configure all event listeners at once
     const links = {
         '#home': temples,
         '#old': temples.filter(t => parseInt(t.dedicated.split(',')[0]) < 1900),
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         '#small': temples.filter(t => t.area < 10000)
     };
     
-    // Adiciona os event listeners
+    // Event listeners
     Object.keys(links).forEach(selector => {
         document.querySelector(selector).addEventListener('click', (e) => {
             e.preventDefault();
