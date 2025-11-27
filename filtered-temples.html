@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album - Worldwide</title>
+    <meta name="description" content="A responsive photo album for temples worldwide with dynamic content and lazy loading.">
+    <meta name="author" content="Pedro Caldas">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/filtered-temples-styles.css"> 
+    <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 37.5em)">
+    <script src="scripts/filtered-temples-menu.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/temple-list.js" defer></script> <!-- Adicione este arquivo JS -->
+
+</head>
+<body>
+    <header>
+        <nav>
+            <button type="button" id="menu" aria-label="Navigation menu">☰</button> 
+            <h2>Temple Album</h2> 
+                <ul class="navigation">
+                    <li><a href="#" id="home" class="active">Home</a></li>
+                    <li><a href="#" id="old">Old</a></li>
+                    <li><a href="#" id="new">New</a></li>
+                    <li><a href="#" id="large">Large</a></li>
+                    <li><a href="#" id="small">Small</a></li>
+                </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Temples Worldwide</h1>
+        
+        <!-- ALTERAÇÃO PRINCIPAL: Container vazio onde os cards serão inseridos -->
+        <div class="temple-images" id="temple-container">
+            <!-- Os cards serão criados dinamicamente pelo JavaScript -->
+        </div>
+    </main>
+    <footer>
+        <p>©<span id="copyright-year">2025</span> 🌴🥥🏖️ Pedro Caldas 🏖️🥥🌴 Recife, Brazil</p> 
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
