@@ -4,32 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Railway Adventures</title>
-    <meta name="description" content="A responsive photo album for temples worldwide, featuring a mobile-first design with a hamburger menu and single-column layout for small screens.">
+    <meta name="description" content="A tourism company page focused on train trips around europe.">
     <meta name="author" content="Pedro Caldas">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles/styles.css">
-    <!-- <script src="scripts/getdates.js" defer></script> -->
+    <script src="scripts/lastmodified.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a href="#" title="Home">Home</a></li>
-        <li><a href="#" title="Contact">Contact</a></li>
-        <li><a href="#" title="Trips">Trips</a></li>
-    </ul>
-</nav>
+<header>
+    <nav>
+        <div class="nav-title">Railway Adventures</div>
+        <button id="menu">☰</button>
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Trips</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+    <main>
+        
+        <h1>Railway Adventures</h1>
+        <h2>A comprehensive guide to European rail journeys. It will feature detailed information on the scenic routes, estimated travel times, and the specific characteristics of each train line or service.</h2>
+        <h1>Questions:</h1>
+        <h2>Witch are the cheapest trip?</h2>
+        <h2>How can i buy a ticket?</h2>
+        <h2>Witch are the most wanted tickets?</h2>
+        <h1>Styles:</h1>
+        <h2>Colors: #C7A475 and #7598C7</h2>    
+        <h2>Fonts: Im using Literata AND Cormorant font</h2>
 
-    <h1>Railway Adventures</h1>
-    <h2>A comprehensive guide to European rail journeys. It will feature detailed information on the scenic routes, estimated travel times, and the specific characteristics of each train line or service.</h2>
-    <h1>Questions:</h1>
-    <h2>Witch are the cheapest trip?</h2>
-    <h2>How can i buy a ticket?</h2>
-    <h2>Witch are the most wanted tickets?</h2>
-    <h1>Styles:</h1>
-    <h2>Colors: #C7A475 and #7598C7</h2>    
-    <h2>Fonts: Im using Literata AND Cormorant font</h2>
+        <footer>
+            <p>©<span id="copyright-year">2025</span> 🌴🥥🏖️ Pedro Caldas 🏖️🥥🌴 Recife, Brazil</p> 
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </footer>
 
+    </main>
 
 </body>
 </html>

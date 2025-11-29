@@ -1,4 +1,6 @@
-/* Basic styling for siteplan.html */
+/* ====================================
+   MOBILE FIRST (Default Rules)
+   ==================================== */
 
 body {
     font-family: 'Literata', serif;
@@ -14,7 +16,6 @@ h1 {
     color: #7598C7;
     text-align: center;
     margin-bottom: 20px;
-    
 }
 
 h2 {
@@ -23,36 +24,166 @@ h2 {
     color: #000000;
     margin-bottom: 15px;
     text-align: center;
+}
 
+/* --- Mobile Navigation --- */
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
 }
 
 nav {
     background-color: #7598C7;
-    padding: 10px;
-    text-align: center;
+    width: 100%;
+    display: flex;
     align-items: center;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    font-size: 2em;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px 0;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
+.nav-title {
     color: white;
-    text-decoration: none;
+    font-size: x-large;
+    text-align: left;
+    padding: 10px 15px;
+    margin: 0;
+    order: 1;
+    font-family: 'Literata', serif;
     font-weight: bold;
 }
 
-nav a:hover {
-    text-decoration: underline;
+/* Hamburger Button - Mobile */
+#menu {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    order: 2;
+    z-index: 100;
+}
+
+/* Navigation List - Hidden by default on mobile */
+.navigation {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #7598C7;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+}
+
+/* Class to show menu when toggled */
+.open {
+    display: flex;
+}
+
+.navigation li {
+    margin: 0;
+}
+
+.navigation li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #7598C7;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.navigation li a:hover {
+    background-color: #5a7bb0;
+    color: #eee;
+}
+
+.navigation li a.active {
+    background-color: #5a7bb0;
+}
+
+footer {
+    background-color: #7598C7;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* ====================================
+   LARGE SCREEN (Desktop Rules)
+   ==================================== */
+
+@media (min-width: 37.5em) {
+    
+    /* --- Desktop Navigation --- */
+    
+    /* Hide hamburger button on desktop */
+    #menu {
+        display: none;
+    }
+    
+    /* Show navigation as horizontal menu */
+    .navigation {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: none;
+    }
+    
+    .navigation li {
+        margin-right: 20px;
+    }
+    
+    .navigation li:last-child {
+        margin-right: 0;
+    }
+    
+    .navigation li a {
+        padding: 10px 15px;
+        background: none;
+    }
+    
+    .navigation li a:hover {
+        background-color: #5a7bb0;
+        text-decoration: underline;
+    }
+    
+    /* Center both title and navigation */
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        
+    }
+    
+    .nav-title {
+        width: 100%;
+        text-align: center;
+        order: 1;
+        margin-bottom: 10px;
+    }
+    
+    .navigation {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Footer adjustments for desktop */
+    footer {
+        font-size: 1.1em;
+        padding: 20px;
+    }
 }
