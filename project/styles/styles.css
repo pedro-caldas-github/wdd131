@@ -6,7 +6,7 @@ body {
     font-family: 'Literata', serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #dcecdc;
     color: #333;
 }
 
@@ -37,20 +37,32 @@ header {
 nav {
     background-color: #7598C7;
     width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    position: relative;
+    padding: 10px 15px;
+}
+
+nav figure {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 10px 0;
+    order: 1; 
+}
+
+nav figure img {
+    width: 50px; 
+    height: auto;
 }
 
 .nav-title {
     color: white;
     font-size: x-large;
     text-align: left;
-    padding: 10px 15px;
+    padding: 0 10px; 
     margin: 0;
-    order: 1;
+    order: 2; 
+    flex-grow: 1; 
     font-family: 'Literata', serif;
     font-weight: bold;
 }
@@ -63,13 +75,13 @@ nav {
     border: none;
     color: white;
     cursor: pointer;
-    order: 2;
+    order: 3; 
     z-index: 100;
 }
 
 /* Navigation List - Hidden by default on mobile */
 .navigation {
-    display: none;
+    display: none; 
     flex-direction: column;
     list-style: none;
     margin: 0;
@@ -111,6 +123,34 @@ nav {
     background-color: #5a7bb0;
 }
 
+/* 🚨 NOVA REGRA: Torna a imagem dentro de .banner responsiva 🚨 */
+.banner img {
+    max-width: 100%; 
+    height: auto; /* Mantém a proporção da imagem */
+    display: block;
+}
+
+/* --- Layout das Imagens de Viagem --- */
+.trip-gallery {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    margin-top: 20px;
+    background-color: #C7A475;
+}
+
+.trip-gallery div {
+    width: 100%; 
+}
+
+.trip-gallery figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    
+}
+
 footer {
     background-color: #7598C7;
     padding: 15px;
@@ -120,6 +160,8 @@ footer {
     font-weight: bold;
     margin-top: 20px;
 }
+
+/* --- */
 
 /* ====================================
    LARGE SCREEN (Desktop Rules)
@@ -131,12 +173,12 @@ footer {
     
     /* Hide hamburger button on desktop */
     #menu {
-        display: none;
+        display: none; 
     }
     
     /* Show navigation as horizontal menu */
     .navigation {
-        display: flex !important;
+        display: flex !important; 
         flex-direction: row;
         position: static;
         width: auto;
@@ -163,23 +205,44 @@ footer {
     
     /* Center both title and navigation */
     nav {
-        justify-content: center;
-        flex-wrap: wrap;
-        
+        justify-content: space-between; 
+        flex-wrap: nowrap; 
+        padding: 10px 20px; 
     }
     
     .nav-title {
-        width: 100%;
-        text-align: center;
+        width: auto; 
+        text-align: left;
+        order: 2; 
+        margin-bottom: 0;
+    }
+
+    nav figure {
         order: 1;
-        margin-bottom: 10px;
+        margin: 0; 
+    }
+
+    nav figure img {
+        width: 60px; 
     }
     
     .navigation {
-        order: 2;
-        width: 100%;
-        justify-content: center;
+        order: 3; 
+        width: auto;
+        justify-content: flex-end;
     }
+    
+    /* --- Layout das Imagens de Viagem (Desktop) --- */
+    .trip-gallery {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: space-between; 
+    }
+
+    .trip-gallery div {
+        width: calc(33.333% - (40px / 3)); 
+    }
+
     
     /* Footer adjustments for desktop */
     footer {
