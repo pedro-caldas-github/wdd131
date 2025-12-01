@@ -3,10 +3,10 @@
    ==================================== */
 
 body {
-    font-family: 'Literata', serif;
+    font-family: 'Cormorant', serif;
     margin: 0;
     padding: 20px;
-    background-color: #dcecdc;
+    background-color: #f3f8f3;
     color: #333;
 }
 
@@ -161,6 +161,31 @@ footer {
     margin-top: 20px;
 }
 
+.banner {
+    position: relative; /* CRÍTICO: Permite posicionar itens filhos de forma absoluta */
+    margin: 0; /* Remove margem padrão de figura */
+}
+
+/* 2. Define a posição absoluta da citação (filho) */
+.citation {
+    position: absolute;
+    bottom: 0; /* Coloca a citação na parte inferior do .banner */
+    left: 0; /* Coloca a citação no canto esquerdo do .banner */
+    padding: 15px; /* Adiciona algum espaço interno ao redor do texto */
+    color: white; /* Cor da fonte branca (conforme solicitado) */
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semi-transparente para melhorar a leitura */
+    z-index: 5; /* Garante que fique acima da imagem */
+    width: 100%; /* Ocupa a largura total na posição absoluta */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* 3. Estiliza o texto dentro da citação */
+.citation h3 {
+    margin: 5px 0; /* Espaço entre as linhas de texto */
+    font-size: 1.1em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Melhora a visibilidade */
+}
+
 /* --- */
 
 /* ====================================
@@ -205,7 +230,7 @@ footer {
     
     /* Center both title and navigation */
     nav {
-        justify-content: space-between; 
+        justify-content: center; 
         flex-wrap: nowrap; 
         padding: 10px 20px; 
     }

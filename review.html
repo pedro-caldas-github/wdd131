@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Page</title>
+    <link rel="stylesheet" href="styles/form-styles.css">
+
+</head>
+<body>
+    <header>
+        <h1>Review Received!</h1>
+    </header>
+
+    <main class="confirmation-page">
+        <h2>Thank You for Your Review!</h2>
+        <p>Your review has been successfully submitted. We appreciate your feedback, it is very important to us.</p>
+        
+        <div class="counter">
+            <h3>Total Reviews Submitted:</h3>
+            <p id="reviewCount" class="count-number">0</p>
+        </div>
+        
+        <p><a href="form.html">Back to the Form</a></p>
+    </main>
+
+    <footer>
+        <p>&copy;2024 Product Review | Last Modification: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        const REVIEW_COUNT_KEY = 'reviewCounter';
+
+        function updateReviewCounter() {
+            let currentCount = 0;
+            const storedCount = localStorage.getItem(REVIEW_COUNT_KEY);
+
+            if (storedCount) {
+                currentCount = parseInt(storedCount, 10);
+            }
+            
+            currentCount += 1;
+            
+            localStorage.setItem(REVIEW_COUNT_KEY, currentCount);
+
+            document.getElementById('reviewCount').textContent = currentCount;
+        }
+
+        function displayLastModified() {
+            document.getElementById('lastModified').textContent = document.lastModified;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateReviewCounter();
+            displayLastModified();
+        });
+    </script>
+</body>
+</html>
