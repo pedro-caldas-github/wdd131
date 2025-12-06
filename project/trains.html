@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Railway Adventures</title>
+    <title>Railway Adventures - Trains</title>
     <meta name="description" content="A tourism company page focused on train trips around europe.">
     <meta name="author" content="Pedro Caldas">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,20 +12,21 @@
     <script src="scripts/lastmodified.js" defer></script>
     <script src="scripts/menu.js" defer></script>
 </head>
-<body>
+<body class="page-trains">
 <header>
 
     <nav>
     <figure> 
-        <img src="images/logo.png" alt="Logo image of the company">
+        <img src="images/logo.png" alt="Logo image of the company" loading="eager">
         <figcaption></figcaption>
     </figure>
         <div class="nav-title">Railway Adventures</div>
         <button id="menu">☰</button>
         <ul class="navigation">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html" >Home</a></li>
             <li><a href="trips.html">Trips</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="trains.html" class="active">Trains</a></li>
         </ul>
     </nav>
 </header>
@@ -36,11 +37,10 @@
             <p class="introduction-text">Embark on a journey across the railways of Europe. The quality of your trip starts with the right train. Discover the 6 most important models that connect cities and landscapes with high speed and comfort.</p>
 
             <section class="train-section" id="tgv-duplex">
-                <h2>1. 🚄 TGV Duplex (Train à Grande Vitesse)</h2>
+                <h2>TGV Duplex (Train à Grande Vitesse)</h2>
                 
                 <figure class="train-image-container">
                     <img src="images/train1 - tgv.jpg" alt="Horizontal image of a double-decker TGV Duplex train" loading="lazy">
-                    <figcaption>The TGV Duplex: The double-decker efficiency of French high-speed rail.</figcaption>
                 </figure>
                 
                 <p>The TGV Duplex is France's highest-capacity high-speed train, designed with two decks to maximize the number of passengers on high-demand routes. Manufactured by Alstom, it is the backbone of SNCF's high-speed services and essential for long-distance international routes, such as Paris to Barcelona and Paris to Geneva. Its two-story construction not only increases capacity but also offers passengers panoramic views, especially on the upper deck. While it is a passenger train, its high power allows it to maintain impressive speeds of up to 320 km/h, connecting Western Europe quickly and efficiently.</p>
@@ -48,43 +48,41 @@
                 <div class="train-details">
                     <h3>Technical Details:</h3>
                     <ul>
-                        <li>**Main Routes:** France (Paris-Marseille, Paris-Lyon, etc.), International Routes (Spain, Switzerland).</li>
-                        <li>**Maximum Service Speed:** 320 km/h.</li>
-                        <li>**Passenger Capacity (Approx.):** 510 passengers.</li>
-                        <li>**Special Features:** **Double-decker (Duplex)** design for maximum capacity.</li>
-                        <li>**Manufactured In:** France (Alstom).</li>
+                        <li>Main Routes: France (Paris-Marseille, Paris-Lyon, etc.), International Routes (Spain, Switzerland).</li>
+                        <li>Maximum Service Speed: 320 km/h.</li>
+                        <li>Passenger Capacity (Approx.): 510 passengers.</li>
+                        <li>Special Features: Double-decker (Duplex) design for maximum capacity.</li>
+                        <li>Manufactured In: France (Alstom).</li>
                     </ul>
                 </div>
             </section>
 
             <section class="train-section" id="ice-3">
-                <h2>2. 🇩🇪 ICE 3 (Intercity-Express)</h2>
+                <h2>🇩🇪 ICE 3 (Intercity-Express)</h2>
                 
                 <figure class="train-image-container">
                     <img src="images/train2 - ICE_3_Oberhaider-Wald-Tunnel.jpg" alt="Horizontal image of a German ICE 3 train" loading="lazy">
-                    <figcaption>The ICE 3: The high-speed train with a panoramic view in Germany.</figcaption>
                 </figure>
                 
-                <p>The ICE 3 is Germany's fastest and most technologically advanced series, operated by Deutsche Bahn (DB). Its distinctive feature is **distributed propulsion**, meaning the motors are spread throughout the train, rather than concentrated in a single locomotive. This allows for quicker acceleration and a higher top speed. Furthermore, the ICE 3 features a **lounge area** behind the driver with a glass wall, providing passengers with a direct view of the track ahead. It is vital for domestic high-speed routes and international connections to the Netherlands and Belgium.</p>
+                <p>The ICE 3 is Germany's fastest and most technologically advanced series, operated by Deutsche Bahn (DB). Its distinctive feature is distributed propulsion, meaning the motors are spread throughout the train, rather than concentrated in a single locomotive. This allows for quicker acceleration and a higher top speed. Furthermore, the ICE 3 features a lounge area behind the driver with a glass wall, providing passengers with a direct view of the track ahead. It is vital for domestic high-speed routes and international connections to the Netherlands and Belgium.</p>
                 
                 <div class="train-details">
                     <h3>Technical Details:</h3>
                     <ul>
-                        <li>**Main Routes:** Germany (Frankfurt-Cologne), International Routes (Brussels, Amsterdam).</li>
-                        <li>**Maximum Service Speed:** 300 km/h (some versions up to 330 km/h).</li>
-                        <li>**Passenger Capacity (Approx.):** 450 passengers.</li>
-                        <li>**Special Features:** **Distributed Propulsion** and **Panoramic View** in the driver's lounge.</li>
-                        <li>**Manufactured In:** Germany (Siemens Mobility).</li>
+                        <li>Main Routes: Germany (Frankfurt-Cologne), International Routes (Brussels, Amsterdam).</li>
+                        <li>Maximum Service Speed: 300 km/h (some versions up to 330 km/h).</li>
+                        <li>Passenger Capacity (Approx.): 450 passengers.</li>
+                        <li>Special Features: Distributed Propulsion and Panoramic View in the driver's lounge.</li>
+                        <li>Manufactured In: Germany (Siemens Mobility).</li>
                     </ul>
                 </div>
             </section>
 
             <section class="train-section" id="frecciarossa-1000">
-                <h2>3. 🇮🇹 Frecciarossa 1000 (V300 Zefiro)</h2>
+                <h2>🇮🇹 Frecciarossa 1000 (V300 Zefiro)</h2>
                 
                 <figure class="train-image-container">
                     <img src="images/train3 - frecciarossa1000.jpg" alt="Horizontal image of the Italian Frecciarossa 1000 train" loading="lazy">
-                    <figcaption>Frecciarossa 1000: Italy's ultra-fast and sustainable train.</figcaption>
                 </figure>
                 
                 <p>The Frecciarossa 1000 (Red Arrow) is the crown jewel of the Italian high-speed network, operated by Trenitalia. Considered one of Europe's fastest and most sustainable trains, it was designed for interoperability across the entire European high-speed network, meeting all noise and safety requirements. Its construction is focused on comfort, energy efficiency, and low carbon emissions. Its maximum operating speed makes it the ideal train for connecting key Italian cities like Milan, Rome, and Naples, drastically reducing travel times.</p>
@@ -92,21 +90,20 @@
                 <div class="train-details">
                     <h3>Technical Details:</h3>
                     <ul>
-                        <li>**Main Routes:** Italy (Milan-Rome-Naples-Salerno).</li>
-                        <li>**Maximum Service Speed:** 360 km/h.</li>
-                        <li>**Passenger Capacity (Approx.):** 457 passengers.</li>
-                        <li>**Special Features:** Italy's fastest and quietest production train, with **high energy efficiency**.</li>
-                        <li>**Manufactured In:** Italy (AnsaldoBreda and Hitachi Rail).</li>
+                        <li>Main Routes: Italy (Milan-Rome-Naples-Salerno).</li>
+                        <li>Maximum Service Speed: 360 km/h.</li>
+                        <li>Passenger Capacity (Approx.): 457 passengers.</li>
+                        <li>Special Features: Italy's fastest and quietest production train, with high energy efficiency.</li>
+                        <li>Manufactured In: Italy (AnsaldoBreda and Hitachi Rail).</li>
                     </ul>
                 </div>
             </section>
 
             <section class="train-section" id="eurostar-e320">
-                <h2>4. 🇬🇧🇫🇷🇧🇪 Eurostar e320</h2>
+                <h2>🇬🇧🇫🇷🇧🇪 Eurostar e320</h2>
                 
                 <figure class="train-image-container">
                     <img src="images/train4 - eurostar e320.webp" alt="Horizontal image of the Eurostar e320 train" loading="lazy">
-                    <figcaption>Eurostar e320: Connecting the UK to the continent beneath the Channel.</figcaption>
                 </figure>
                 
                 <p>The Eurostar e320 is the train that connects the United Kingdom with continental Europe (France, Belgium, and the Netherlands) via the Channel Tunnel. Its name, e320, reflects its maximum service speed of 320 km/h. As the successor to the first generation of Eurostar, the e320 offers greater capacity and a higher level of onboard comfort, making it crucial for business and leisure travel between London and cities like Paris and Amsterdam. It features a design adapted for the tunnels and a strict safety standard required for the Eurotunnel crossing.</p>
@@ -114,43 +111,41 @@
                 <div class="train-details">
                     <h3>Technical Details:</h3>
                     <ul>
-                        <li>**Main Routes:** London-Paris, London-Brussels, London-Amsterdam (via Eurotunnel).</li>
-                        <li>**Maximum Service Speed:** 320 km/h.</li>
-                        <li>**Passenger Capacity (Approx.):** 902 passengers.</li>
-                        <li>**Special Features:** Designed to cross the **Channel Tunnel** (Eurotunnel) and comply with specific safety standards.</li>
-                        <li>**Manufactured In:** Germany (Siemens Mobility).</li>
+                        <li>Main Routes: London-Paris, London-Brussels, London-Amsterdam (via Eurotunnel).</li>
+                        <li>Maximum Service Speed: 320 km/h.</li>
+                        <li>Passenger Capacity (Approx.): 902 passengers.</li>
+                        <li>Special Features: Designed to cross the Channel Tunnel (Eurotunnel) and comply with specific safety standards.</li>
+                        <li>Manufactured In: Germany (Siemens Mobility).</li>
                     </ul>
                 </div>
             </section>
 
             <section class="train-section" id="pendolino">
-                <h2>5. 📐 Pendolino (Tilting Technology)</h2>
+                <h2>Pendolino (Tilting Technology)</h2>
                 
                 <figure class="train-image-container">
                     <img src="images/train5 - pendolino.avif" alt="Horizontal image of the Pendolino train leaning into a curve" loading="lazy">
-                    <figcaption>Pendolino: The train that tilts for more speed on conventional lines.</figcaption>
                 </figure>
                 
-                <p>Pendolino, which means "small pendulum," is the generic name for a family of high-speed trains that use **active tilting technology**. This feature allows the train to lean into curves, compensating for centrifugal force and enabling it to travel over conventional rail lines faster than standard trains. This makes it ideal for countries with mountainous topography or older rail networks where building straight, high-speed lines is prohibitive. It is widely used in countries like Italy (ETR 610) and Poland.</p>
+                <p>Pendolino, which means "small pendulum," is the generic name for a family of high-speed trains that use active tilting technology. This feature allows the train to lean into curves, compensating for centrifugal force and enabling it to travel over conventional rail lines faster than standard trains. This makes it ideal for countries with mountainous topography or older rail networks where building straight, high-speed lines is prohibitive. It is widely used in countries like Italy (ETR 610) and Poland.</p>
                 
                 <div class="train-details">
                     <h3>Technical Details:</h3>
                     <ul>
-                        <li>**Main Routes:** Various routes in Italy, Poland (Pendolino EIC Premium), Switzerland, Czech Republic.</li>
-                        <li>**Maximum Service Speed:** 250 km/h.</li>
-                        <li>**Passenger Capacity (Approx.):** 420 passengers (ETR 610 model).</li>
-                        <li>**Special Features:** Features an **Active Tilting System** that allows for higher speed on curves.</li>
-                        <li>**Manufactured In:** Italy (Alstom, formerly Fiat Ferroviaria and Alstom Ferroviaria).</li>
+                        <li>Main Routes: Various routes in Italy, Poland (Pendolino EIC Premium), Switzerland, Czech Republic.</li>
+                        <li>Maximum Service Speed: 250 km/h.</li>
+                        <li>Passenger Capacity (Approx.): 420 passengers (ETR 610 model).</li>
+                        <li>Special Features: Features an Active Tilting System that allows for higher speed on curves.</li>
+                        <li>Manufactured In: Italy (Alstom, formerly Fiat Ferroviaria and Alstom Ferroviaria).</li>
                     </ul>
                 </div>
             </section>
 
             <section class="train-section" id="nightjet">
-                <h2>6. 🌙 Nightjet (Night Trains)</h2>
+                <h2>Nightjet (Night Trains)</h2>
                 
                 <figure class="train-image-container">
                     <img src="images/train6 - nightjet.jpg" alt="Horizontal image of the Nightjet overnight train" loading="lazy">
-                    <figcaption>Nightjet: Travel while you sleep between European capitals.</figcaption>
                 </figure>
                 
                 <p>Nightjet is the overnight train service of the Austrian railway company ÖBB, which has become the primary provider of long-distance night travel in Central Europe. Its purpose differs from high-speed trains, focusing on sleeping comfort, offering private sleeping cabins, *couchettes* (basic sleeping berths), and reclining seats. While not the fastest train, it allows passengers to travel long distances overnight, saving daylight time and a hotel night. It is essential for sustainable and leisure travel between distant capitals.</p>
@@ -158,11 +153,11 @@
                 <div class="train-details">
                     <h3>Technical Details:</h3>
                     <ul>
-                        <li>**Main Routes:** Vienna-Rome, Hamburg-Zurich, Berlin-Budapest (covering Central/Eastern Europe).</li>
-                        <li>**Maximum Service Speed:** 200 km/h.</li>
-                        <li>**Passenger Capacity (Approx.):** Varies (Focused on beds/cabins for sleeping).</li>
-                        <li>**Special Features:** Focused on **sleeping accommodations** (*sleeper/couchette*) for overnight travel.</li>
-                        <li>**Manufactured In:** Varies (usually modernized Siemens/ÖBB carriages).</li>
+                        <li>Main Routes: Vienna-Rome, Hamburg-Zurich, Berlin-Budapest (covering Central/Eastern Europe).</li>
+                        <li>Maximum Service Speed: 200 km/h.</li>
+                        <li>Passenger Capacity (Approx.): Varies (Focused on beds/cabins for sleeping).</li>
+                        <li>Special Features: Focused on sleeping accommodations (*sleeper/couchette*) for overnight travel.</li>
+                        <li>Manufactured In: Varies (usually modernized Siemens/ÖBB carriages).</li>
                     </ul>
                 </div>
 
